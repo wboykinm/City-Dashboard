@@ -12269,7 +12269,7 @@ function drawMap(msg, data) {
 
     var projection = d3.geo.mercator()
         .center([-74.1723667, 40.735657])
-        .scale(250000)
+        .scale(260000)
         .translate([mapsize.width / 2, mapsize.height / 2]);
 
     var path = d3.geo.path()
