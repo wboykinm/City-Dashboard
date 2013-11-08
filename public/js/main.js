@@ -12269,8 +12269,15 @@ function drawMap(msg, data) {
 
     var projection = d3.geo.mercator()
         .center([-74.1723667, 40.735657])
-        .scale(250000)
+        .scale(260000)
         .translate([mapsize.width / 2, mapsize.height / 2]);
+
+    /*var tile = d3.geo.tile()
+        .scale(projection.scale() * 2 * Math.PI)
+        .translate(projection([0, 0]))
+        .zoomDelta((window.devicePixelRatio || 1) - .5);
+
+    var tiles = tile();*/
 
     var path = d3.geo.path()
         .projection(projection);
