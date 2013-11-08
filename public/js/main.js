@@ -12579,7 +12579,7 @@ function changeMetric(error, data) {
     });
 }
 
-function updateMeta(msg, d) {
+/*function updateMeta(msg, d) {
     $.ajax({
         url: 'data/meta/' + d.metric + '.md',
         type: 'GET',
@@ -12597,7 +12597,7 @@ function updateMeta(msg, d) {
             console.log(status, desc);
         }
     });
-}
+}*/
 
 function processMetric(msg, data) {
     // break out years into maps
