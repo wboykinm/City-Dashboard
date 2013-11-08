@@ -12257,6 +12257,8 @@ else
 
 })();
 
+// THIS IS WHERE THE MAGIC BEGINS!!
+
 function drawMap(msg, data) {
 
     var mapsize = {
@@ -12266,7 +12268,7 @@ function drawMap(msg, data) {
     };
 
     var projection = d3.geo.mercator()
-        .center([-80.827, 35.260])
+        .center([-74.1723667, 40.735657])
         .scale(52000)
         .translate([mapsize.width / 2, mapsize.height / 2]);
 
@@ -12547,7 +12549,7 @@ $(document).ready(function () {
     PubSub.subscribe('changeMetric', updateMeta);
 
     queue()
-        .defer(d3.json, "data/npa.topojson")
+        .defer(d3.json, "data/newark.topojson")
         .defer(d3.csv, "data/" + $("#metric").val() + ".csv")
         .await(draw);
 
