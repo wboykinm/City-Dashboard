@@ -157,9 +157,9 @@ div {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-body {
+/*body {
   background: #f9f9f9;
-}
+}*/
 
 .row-topmargin {
   margin-top: 25px;
@@ -202,8 +202,8 @@ body {
 .neighborhoods path {
   stroke: #949494;
   stroke-width: 0.3px;
-  -webkit-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
 }
 
 .mean-county {
