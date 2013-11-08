@@ -12539,14 +12539,14 @@ $(document).ready(function () {
     // subscriptions
     PubSub.subscribe('initializeMap', processMetric);
     PubSub.subscribe('initializeMap', drawMap);
-    PubSub.subscribe('initializeMap', updateMeta);
+    //PubSub.subscribe('initializeMap', updateMeta);
     PubSub.subscribe('initializeBarChart', drawBarChart);
     PubSub.subscribe('changeYear', drawMap);
     PubSub.subscribe('changeYear', drawBarChart);
     PubSub.subscribe('changeMetric', processMetric);
     PubSub.subscribe('changeMetric', drawMap);
     PubSub.subscribe('changeMetric', drawBarChart);
-    PubSub.subscribe('changeMetric', updateMeta);
+    //PubSub.subscribe('changeMetric', updateMeta);
 
     queue()
         .defer(d3.json, "data/newark.topojson")
