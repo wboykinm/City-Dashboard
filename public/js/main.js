@@ -12304,7 +12304,7 @@ function drawMap(msg, data) {
             .attr("data-quantile", quantize(data.get(item.attr('data-npa'))))
             .attr("data-toggle", "tooltip")
             .attr("data-original-title", function(d) {
-                return "Neighborhood " + item.attr('data-npa') + "<br>" + data.get(item.attr('data-npa'));
+                return "Block Group " + item.attr('data-npa') + "<br>" + data.get(item.attr('data-npa'));
             });
     });
 
