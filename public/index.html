@@ -19,7 +19,9 @@
     <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png" />
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/main.css?foo=32906">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootswatch/3.0.1/amelia/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main-add.css">
+    <!--<link rel="stylesheet" href="css/main.css?foo=32906">-->
 
     <!-- Leaflet, HTML5 and typeahead patches for oldIE -->
     <!--[if lt IE 9]>
@@ -77,9 +79,16 @@
     <div class="container container-content">
         <div class="row">
             <div class="col-md-8">
-                <select name="" id="metric" class="form-control input-lg form-metric">
-                    <option value="p1">Population</option>
-                    <option value="m1">Median Household Income</option>
+                <select name="" id="metric" class="form-control form-metric">
+                    <option value="tc_e_a">TC_E_A</option>
+                    <option value="tc_pv_a">TC_Pv_A</option>
+                    <option value="tc_land_a">TC_Land_A</option>
+                    <option value="tc_pi_a">TC_Pi_A</option>
+                    <option value="tc_p_a">TC_P_A</option>
+                    <option value="tc_e_p">TC_E_P</option>
+                    <option value="tc_pv_p">TC_Pv_P</option>
+                    <option value="tc_p_p">TC_P_P</option>
+                    <option value="tc_pi_p">TC_Pi_P</option>
                 </select>
 
             </div>
@@ -93,13 +102,13 @@
                 </div>
             </div>
             <div class="col-md-4 map-aside">
-                <div>
+                <!--<div>
                     <h3 class="time-year">2012</h3>
                     <button type="button" class="btn btn-primary btn-looper">
                         <span class="glyphicon glyphicon-play"></span>
                     </button>
                     <input type="text" class="slider slider-horizontal time-slider" value="" data-slider-min="2010" data-slider-max="2012" data-slider-value="2012" data-slider-tooltip="hide" data-slider-handle="square" data-slider-step="2" >
-                </div>
+                </div>-->
                 <div id="barChart">
                     <svg width="100%" height="300" class="chart barchart" preserveAspectRatio="xMinYMin">
                         <defs>

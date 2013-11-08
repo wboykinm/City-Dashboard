@@ -12257,6 +12257,8 @@ else
 
 })();
 
+// THIS IS WHERE THE MAGIC BEGINS!!
+
 function drawMap(msg, data) {
 
     var mapsize = {
@@ -12266,8 +12268,8 @@ function drawMap(msg, data) {
     };
 
     var projection = d3.geo.mercator()
-        .center([-80.827, 35.260])
-        .scale(52000)
+        .center([-74.1723667, 40.735657])
+        .scale(250000)
         .translate([mapsize.width / 2, mapsize.height / 2]);
 
     var path = d3.geo.path()
@@ -12280,7 +12282,7 @@ function drawMap(msg, data) {
     if (msg === 'initializeMap') {
         npaMap.select(".neighborhoods")
             .selectAll("path")
-            .data(topojson.feature(data.neighborhoods, data.neighborhoods.objects.npa2).features)
+            .data(topojson.feature(data.neighborhoods, data.neighborhoods.objects.layer1).features)
             .enter()
             .append("path")            
             .attr("d", path)
@@ -12302,7 +12304,7 @@ function drawMap(msg, data) {
             .attr("data-quantile", quantize(data.get(item.attr('data-npa'))))
             .attr("data-toggle", "tooltip")
             .attr("data-original-title", function(d) {
-                return "Neighborhood " + item.attr('data-npa') + "<br>" + data.get(item.attr('data-npa'));
+                return "Block Group " + item.attr('data-npa') + "<br>" + data.get(item.attr('data-npa'));
             });
     });
 
@@ -12311,7 +12313,7 @@ function drawMap(msg, data) {
         .range([0, $("#barChart").parent().width() - 40]);
 
     npaMap.selectAll(".neighborhoods path")
-        //.datum(topojson.feature(data.neighborhoods, data.neighborhoods.objects.npa2))
+        //.datum(topojson.feature(data.neighborhoods, data.neighborhoods.objects.layer1))
         .on("mouseover", function(d) {
             var sel = d3.select(this);
             sel.moveToFront();
@@ -12492,14 +12494,14 @@ d3.selection.prototype.moveToFront = function () {
     });
 };
 
-function sliderChange(value) {
+/*function sliderChange(value) {
     $('.time-year').text(value);
     year = "y_" + value;
     PubSub.publish('changeYear');
-}
+}*/
 
 $(document).ready(function () {
-
+/*
     // time slider
     $('.time-slider').slider({formater: function (value) { return value; }}).on('slideStop', function (ev) {
         sliderChange(ev.value);
@@ -12532,22 +12534,22 @@ $(document).ready(function () {
             clearInterval(timer);
         }
     });
-
+*/
 
     // subscriptions
     PubSub.subscribe('initializeMap', processMetric);
     PubSub.subscribe('initializeMap', drawMap);
-    PubSub.subscribe('initializeMap', updateMeta);
+    //PubSub.subscribe('initializeMap', updateMeta);
     PubSub.subscribe('initializeBarChart', drawBarChart);
     PubSub.subscribe('changeYear', drawMap);
     PubSub.subscribe('changeYear', drawBarChart);
     PubSub.subscribe('changeMetric', processMetric);
     PubSub.subscribe('changeMetric', drawMap);
     PubSub.subscribe('changeMetric', drawBarChart);
-    PubSub.subscribe('changeMetric', updateMeta);
+    //PubSub.subscribe('changeMetric', updateMeta);
 
     queue()
-        .defer(d3.json, "data/npa.topojson")
+        .defer(d3.json, "data/newark.topojson")
         .defer(d3.csv, "data/" + $("#metric").val() + ".csv")
         .await(draw);
 
@@ -12577,7 +12579,7 @@ function changeMetric(error, data) {
     });
 }
 
-function updateMeta(msg, d) {
+/*function updateMeta(msg, d) {
     $.ajax({
         url: 'data/meta/' + d.metric + '.md',
         type: 'GET',
@@ -12595,7 +12597,7 @@ function updateMeta(msg, d) {
             console.log(status, desc);
         }
     });
-}
+}*/
 
 function processMetric(msg, data) {
     // break out years into maps
