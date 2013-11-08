@@ -12282,7 +12282,7 @@ function drawMap(msg, data) {
     if (msg === 'initializeMap') {
         npaMap.select(".neighborhoods")
             .selectAll("path")
-            .data(topojson.feature(data.neighborhoods, data.neighborhoods.objects.npa2).features)
+            .data(topojson.feature(data.neighborhoods, data.neighborhoods.objects.layer1).features)
             .enter()
             .append("path")            
             .attr("d", path)
@@ -12313,7 +12313,7 @@ function drawMap(msg, data) {
         .range([0, $("#barChart").parent().width() - 40]);
 
     npaMap.selectAll(".neighborhoods path")
-        //.datum(topojson.feature(data.neighborhoods, data.neighborhoods.objects.npa2))
+        //.datum(topojson.feature(data.neighborhoods, data.neighborhoods.objects.layer1))
         .on("mouseover", function(d) {
             var sel = d3.select(this);
             sel.moveToFront();
