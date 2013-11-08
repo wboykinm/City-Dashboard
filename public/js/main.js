@@ -12498,7 +12498,7 @@ function sliderChange(value) {
     PubSub.publish('changeYear');
 }
 
-$(document).ready(function () {
+/*$(document).ready(function () {
 
     // time slider
     $('.time-slider').slider({formater: function (value) { return value; }}).on('slideStop', function (ev) {
@@ -12532,7 +12532,7 @@ $(document).ready(function () {
             clearInterval(timer);
         }
     });
-
+*/
 
     // subscriptions
     PubSub.subscribe('initializeMap', processMetric);
