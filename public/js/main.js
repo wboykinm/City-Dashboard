@@ -12492,14 +12492,14 @@ d3.selection.prototype.moveToFront = function () {
     });
 };
 
-function sliderChange(value) {
+/*function sliderChange(value) {
     $('.time-year').text(value);
     year = "y_" + value;
     PubSub.publish('changeYear');
-}
+}*/
 
-/*$(document).ready(function () {
-
+$(document).ready(function () {
+/*
     // time slider
     $('.time-slider').slider({formater: function (value) { return value; }}).on('slideStop', function (ev) {
         sliderChange(ev.value);
