@@ -12272,6 +12272,13 @@ function drawMap(msg, data) {
         .scale(260000)
         .translate([mapsize.width / 2, mapsize.height / 2]);
 
+    /*var tile = d3.geo.tile()
+        .scale(projection.scale() * 2 * Math.PI)
+        .translate(projection([0, 0]))
+        .zoomDelta((window.devicePixelRatio || 1) - .5);
+
+    var tiles = tile();*/
+
     var path = d3.geo.path()
         .projection(projection);
 
