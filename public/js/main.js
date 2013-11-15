@@ -12335,7 +12335,7 @@ function drawMap(msg, data) {
             .attr("data-quantile", quantize(data.get(item.attr('data-npa'))))
             .attr("data-toggle", "tooltip")
             .attr("data-original-title", function(d) {
-                return "Block Group " + item.attr('data-npa') + "<br>" + data.get(item.attr('data-npa')).toFixed(1) + "%";
+                return "Block Group " + item.attr('data-npa') + "<br>" + data.get(item.attr('data-npa')) + "%";
             });
     });
 
