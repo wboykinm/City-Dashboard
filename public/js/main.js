@@ -12257,6 +12257,30 @@ else
 
 })();
 
+
+********************************************************************************
+*                    /   \              /'\       _                              *
+*\_..           /'.,/     \_         .,'   \     / \_                            *
+*    \         /            \      _/       \_  /    \     _                     *
+*     \__,.   /              \    /           \/.,   _|  _/ \                    *
+*          \_/                \  /',.,''\      \_ \_/  \/    \                   *
+*                           _  \/   /    ',../',.\    _/      \                  *
+*             /           _/m\  \  /    |         \  /.,/'\   _\                 *
+*           _/           /MMmm\  \_     |          \/      \_/  \                *
+*          /      \     |MMMMmm|   \__   \          \_       \   \_              *
+*                  \   /MMMMMMm|      \   \           \       \    \             *
+*                   \  |MMMMMMmm\      \___            \_      \_   \            *
+*                    \|MMMMMMMMmm|____.'  /\_            \       \   \_          *
+*                    /'.,___________...,,'   \            \   \        \         *
+*                   /       \          |      \    |__     \   \_       \        *
+*                 _/        |           \      \_     \     \    \       \_      *
+*                /                               \     \     \_   \        \     *
+*                                                 \     \      \   \__      \    *
+*                                                  \     \_     \     \      \   *
+*                                                   |      \     \     \      \  *
+*                                                    \ms          |            \ *
+ ********************************************************************************
+
 // THIS IS WHERE THE MAGIC BEGINS!!
 
 function drawMap(msg, data) {
@@ -12311,7 +12335,7 @@ function drawMap(msg, data) {
             .attr("data-quantile", quantize(data.get(item.attr('data-npa'))))
             .attr("data-toggle", "tooltip")
             .attr("data-original-title", function(d) {
-                return "Block Group " + item.attr('data-npa') + "<br>" + data.get(item.attr('data-npa'));
+                return "Block Group " + item.attr('data-npa') + "<br>" + data.get(item.attr('data-npa')).toFixed(1) + "%";
             });
     });
 
