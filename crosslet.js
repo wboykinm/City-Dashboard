@@ -1335,10 +1335,10 @@ crosslet.MapView = (function(_super) {
     this.map = L.map(el[0]).setView(this.config.map.view.center, this.config.map.view.zoom);
     L.tileLayer("http://{s}.tiles.mapbox.com/v3/landplanner.ga0hjhdl/{z}/{x}/{y}.png", this.config.map.leaflet).addTo(this.map);
     // Bill plays with fire
-    var topPane = map._createPane('leaflet-top-pane', map.getPanes().mapPane);
+    var topPane = this.map._createPane('leaflet-top-pane', this.map.getPanes().mapPane);
     var topLayer = new L.tileLayer('http://{s}.tile.stamen.com/toner-hybrid/{z}/{x}/{y}.png', {
       maxZoom: 17
-    }).addTo(map);
+    }).addTo(this.map);
     topPane.appendChild(topLayer.getContainer());
     topLayer.setZIndex(7);
     // Bill resumes normalcy
