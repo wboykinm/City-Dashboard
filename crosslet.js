@@ -1333,10 +1333,10 @@ crosslet.MapView = (function(_super) {
     this.hoverFunc = this.default_hover;
     $(this.el).attr("class", "crosslet");
     this.map = L.map(el[0]).setView(this.config.map.view.center, this.config.map.view.zoom);
-    L.tileLayer("http://{s}.tiles.mapbox.com/v3/landplanner.ga0hjhdl/{z}/{x}/{y}.png", this.config.map.leaflet).addTo(this.map);
+    L.tileLayer("http://{s}.tiles.mapbox.com/v3/landplanner.ga17m42k/{z}/{x}/{y}.png", this.config.map.leaflet).addTo(this.map);
     // Bill plays with fire
     var topPane = this.map._createPane('leaflet-top-pane', this.map.getPanes().mapPane);
-    var topLayer = new L.tileLayer('http://{s}.tile.stamen.com/toner-hybrid/{z}/{x}/{y}.png', {
+    var topLayer = new L.tileLayer('https://{s}.tiles.mapbox.com/v3/landplanner.ga186bbe/{z}/{x}/{y}.png', {
       maxZoom: 17
     }).addTo(this.map);
     topPane.appendChild(topLayer.getContainer());
